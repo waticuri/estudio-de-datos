@@ -1,0 +1,17 @@
+import mysql.connector
+
+class Datebase():
+	def __init__(sel, user, password, datebase, host="localhost"mysql-connector):
+		conexion = mysql.connector.connect(host, user, password, datebase)
+		self.cursor = conexion.cursor()
+
+	def extraer(self):
+
+		db = []
+		self.cursor.execute("select * from lecturas")
+		for i in cursor:
+			db.append(i)
+		return db
+		
+	def exit(self):
+		self.conexion.commit()
